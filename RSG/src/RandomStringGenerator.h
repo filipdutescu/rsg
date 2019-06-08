@@ -21,10 +21,10 @@ namespace rsg
 		RandomStringGenerator();
 		~RandomStringGenerator();
 	};
-	std::string RandomStringGenerator::s_Lowercase = "";
-	std::string RandomStringGenerator::s_Uppercase = "";
-	std::string RandomStringGenerator::s_Numerical = "";
-	std::string RandomStringGenerator::s_Symbols = "";
+	std::string RandomStringGenerator::s_Lowercase = "abcdefghijklmnopqrstuvwxyz";
+	std::string RandomStringGenerator::s_Uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	std::string RandomStringGenerator::s_Numerical = "1234567890";
+	std::string RandomStringGenerator::s_Symbols = " .,\/|_+=-@#!$%^&*()`~?><\"';:][{}";
 	
 	using RandomString = RandomStringGenerator;
 }
