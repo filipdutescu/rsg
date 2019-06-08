@@ -15,12 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\RandomStringGenerator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\RandomStringGenerator.cpp">
+    <ClCompile Include="src\Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
