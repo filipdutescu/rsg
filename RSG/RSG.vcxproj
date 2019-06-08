@@ -143,10 +143,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\RandomStringGenerator.h" />
+    <ClInclude Include="src\rsg.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\RandomStringGenerator.cpp" />
+    <ClCompile Include="src\rsg.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

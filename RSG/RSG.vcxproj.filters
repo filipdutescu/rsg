@@ -15,12 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\RandomStringGenerator.h">
+    <ClInclude Include="src\rsg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\RandomStringGenerator.cpp">
+    <ClCompile Include="src\rsg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
