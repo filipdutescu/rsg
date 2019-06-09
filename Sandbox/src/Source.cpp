@@ -5,5 +5,6 @@
 int main()
 {
 	rsg::random_string stringGenerator();
+	
 	return 0;
 }

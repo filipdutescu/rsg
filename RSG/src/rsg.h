@@ -5,6 +5,17 @@
 
 namespace rsg
 {
+	// Predefined charsets
+	enum STRING_TYPE
+	{
+		NONE = -1,
+		LOWER, UPPER, NUMERICAL, SYMBOLS,									// Basic charset of single type
+		LOWER_NUMERICAL, LOWER_SYMBOLS, LOWER_NUMERICAL_SYMBOLS,			// Lowercase letters/~ with numbers/~ with symbols/~ with numbers and symbols
+		UPPER_NUMERICAL, UPPER_SYMBOLS, UPPER_NUMERICAL_SYMBOLS,			// Uppercase letters/~ with numbers/~ with symbols/~ with numbers and symbols
+		NUMERICAL_SYMBOLS,													// Digits and symbols charset
+		ALPHA, ALPHA_NUMERICAL, ALPHA_SYMBOLS, ALPHA_NUMERICAL_SYMBOLS		// All letters/~ with numbers/~ with symbols/~ with numbers and symbols
+	};
+
 	// Generator class declaration
 	class RandomStringGenerator
 	{
@@ -18,8 +29,18 @@ namespace rsg
 		std::string m_Custom;					// Contains an instance-based custom charset
 
 	public:
-		RandomStringGenerator();
-		~RandomStringGenerator();
+		// Random string generator from a custom charset
+		RandomStringGenerator(std::string customCharset = "");
+		// Random string generator from predefined charsets
+		RandomStringGenerator(STRING_TYPE charsetType = STRING_TYPE::ALPHA);
+		// Default destructor
+		~RandomStringGenerator() = default;
+
+		// Static methods to get predefined charsets
+		// Get lowercase charset
+		inline static const std::string GetLowercase() { return s_Lowercase; }
+		template<int T>
+		inline static const std::string GetCharset() { return ""; }
 	};
 	std::string RandomStringGenerator::s_Lowercase = "abcdefghijklmnopqrstuvwxyz";
 	std::string RandomStringGenerator::s_Uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
