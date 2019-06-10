@@ -4,7 +4,7 @@
 
 int main()
 {
-	std::cout << rsg::random_string::GetCharset<rsg::STRING_TYPE::ALPHA_NUMERICAL_SYMBOLS>() << "\n\n";
+	std::cout << rsg::random_string::GetCharset<rsg::ALPHA_NUMERICAL_SYMBOLS>() << "\n\n";
 
 	return 0;
 }

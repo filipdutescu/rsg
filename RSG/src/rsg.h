@@ -5,6 +5,13 @@
 
 namespace rsg
 {
+	// Generator (main) class declaration
+	class RandomStringGenerator;
+
+	// Other names for the generator class (for ease of writing)
+	using RandomString = RandomStringGenerator;
+	using random_string = RandomStringGenerator;
+
 	// Predefined charsets
 	enum STRING_TYPE
 	{
@@ -16,7 +23,7 @@ namespace rsg
 		ALPHA, ALPHA_NUMERICAL, ALPHA_SYMBOLS, ALPHA_NUMERICAL_SYMBOLS		// All letters/~ with numbers/~ with symbols/~ with numbers and symbols
 	};
 
-	// Generator class declaration
+	// Generator class implementation
 	class RandomStringGenerator
 	{
 		// Static members
@@ -132,8 +139,5 @@ namespace rsg
 	}
 #pragma endregion ALPHA
 #pragma endregion GET_CHARSET
-
-	using RandomString = RandomStringGenerator;
-	using random_string = RandomStringGenerator;
 }
 #endif
