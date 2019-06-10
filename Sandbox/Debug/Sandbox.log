@@ -1,3 +1,2 @@
 ﻿  Source.cpp
-e:\workplace (personal)\c++\rsg\sandbox\src\source.cpp(7): warning C4930: 'rsg::random_string stringGenerator(void)': prototyped function not called (was a variable definition intended?)
   Sandbox.vcxproj -> E:\Workplace (Personal)\C++\RSG\Debug\Sandbox.exe
