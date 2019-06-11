@@ -2,9 +2,13 @@
 
 #include "rsg.h"
 
+
 int main()
 {
-	std::cout << rsg::random_string::GetCharset<rsg::ALPHA_NUMERICAL_SYMBOLS>() << "\n\n";
+	rsg::random_string rs;
+	std::cout << rsg::random_string::GetCharset<rsg::ALPHA_NUMERICAL_SYMBOLS>()
+		<< "\n\n" << rs.getCharset() << "\t|\t" << rs.getLength()
+		<< "\n\n";
 
 	return 0;
 }

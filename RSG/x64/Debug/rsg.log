@@ -1,0 +1,4 @@
+﻿  rsg.cpp
+e:\workplace (personal)\c++\rsg\rsg\src\rsg.cpp(13): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+e:\workplace (personal)\c++\rsg\rsg\src\rsg.cpp(38): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  rsg.vcxproj -> E:\Workplace (Personal)\C++\RSG\x64\Debug\rsg.lib

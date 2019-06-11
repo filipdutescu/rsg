@@ -37,105 +37,109 @@ namespace rsg
 
 	public:
 		// Random string generator from a custom charset
-		RandomStringGenerator(std::string customCharset = "");
+		RandomStringGenerator(std::string customCharset);
 		// Random string generator from predefined charsets
 		RandomStringGenerator(STRING_TYPE charsetType = STRING_TYPE::ALPHA);
+		// Copy constructor
+		RandomStringGenerator(const RandomStringGenerator& other) = delete;
 		// Default destructor
 		~RandomStringGenerator() = default;
+
+		// Get the current charset used by the generator
+		inline std::string getCharset() const { return m_Custom; }
+
+		// Generate a random string of a given length
+		std::string operator()(int stringLength);
 
 		// Static method to get predefined charsets
 		template<STRING_TYPE T>
 		inline static const std::string GetCharset() { return ""; }
 	};
-	std::string RandomStringGenerator::s_Lowercase = "abcdefghijklmnopqrstuvwxyz";
-	std::string RandomStringGenerator::s_Uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	std::string RandomStringGenerator::s_Numerical = "1234567890";
-	std::string RandomStringGenerator::s_Symbols = " .,\\/|_+=-@#!$%^&*()`~?><\"';:][{}";
 	
 #pragma region GET_CHARSET
 #pragma region LOWER
 	template<>
 	inline const std::string RandomStringGenerator::GetCharset<STRING_TYPE::LOWER>()
 	{
-		return RandomStringGenerator::s_Lowercase;
+		return s_Lowercase;
 	}
 	template<>
 	inline const std::string RandomStringGenerator::GetCharset<STRING_TYPE::LOWER_NUMERICAL>()
 	{
-		return RandomStringGenerator::s_Lowercase + RandomStringGenerator::s_Numerical;
+		return s_Lowercase + s_Numerical;
 	}
 	template<>
 	inline const std::string RandomStringGenerator::GetCharset<STRING_TYPE::LOWER_SYMBOLS>()
 	{
-		return RandomStringGenerator::s_Lowercase + RandomStringGenerator::s_Symbols;
+		return s_Lowercase + s_Symbols;
 	}
 	template<>
 	inline const std::string RandomStringGenerator::GetCharset<STRING_TYPE::LOWER_NUMERICAL_SYMBOLS>()
 	{
-		return RandomStringGenerator::s_Lowercase + RandomStringGenerator::s_Numerical + RandomStringGenerator::s_Symbols;
+		return s_Lowercase + s_Numerical + s_Symbols;
 	}
 #pragma endregion LOWER
 #pragma region UPPER
 	template<>
 	inline const std::string RandomStringGenerator::GetCharset<STRING_TYPE::UPPER>()
 	{
-		return RandomStringGenerator::s_Uppercase;
+		return s_Uppercase;
 	}
 	template<>
 	inline const std::string RandomStringGenerator::GetCharset<STRING_TYPE::UPPER_NUMERICAL>()
 	{
-		return RandomStringGenerator::s_Uppercase + RandomStringGenerator::s_Numerical;
+		return s_Uppercase + s_Numerical;
 	}
 	template<>
 	inline const std::string RandomStringGenerator::GetCharset<STRING_TYPE::UPPER_SYMBOLS>()
 	{
-		return RandomStringGenerator::s_Uppercase + RandomStringGenerator::s_Symbols;
+		return s_Uppercase + s_Symbols;
 	}
 	template<>
 	inline const std::string RandomStringGenerator::GetCharset<STRING_TYPE::UPPER_NUMERICAL_SYMBOLS>()
 	{
-		return RandomStringGenerator::s_Uppercase + RandomStringGenerator::s_Numerical + RandomStringGenerator::s_Symbols;
+		return s_Uppercase + s_Numerical + s_Symbols;
 	}
 #pragma endregion UPPER
 #pragma region NUMERICAL
 	template<>
 	inline static const std::string RandomStringGenerator::GetCharset<STRING_TYPE::NUMERICAL>()
 	{
-		return RandomStringGenerator::s_Numerical;
+		return s_Numerical;
 	}
 	template<>
 	inline static const std::string RandomStringGenerator::GetCharset<STRING_TYPE::NUMERICAL_SYMBOLS>()
 	{
-		return RandomStringGenerator::s_Numerical + RandomStringGenerator::s_Symbols;
+		return s_Numerical + s_Symbols;
 	}
 #pragma endregion NUMERICAL
 #pragma region SYMBOLS
 	template<>
 	inline static const std::string RandomStringGenerator::GetCharset<STRING_TYPE::SYMBOLS>()
 	{
-		return RandomStringGenerator::s_Symbols;
+		return s_Symbols;
 	}
 #pragma endregion SYMBOLS
 #pragma region ALPHA
 	template<>
 	inline const std::string RandomStringGenerator::GetCharset<STRING_TYPE::ALPHA>()
 	{
-		return RandomStringGenerator::s_Lowercase + RandomStringGenerator::s_Uppercase;
+		return s_Lowercase + s_Uppercase;
 	}
 	template<>
 	inline const std::string RandomStringGenerator::GetCharset<STRING_TYPE::ALPHA_NUMERICAL>()
 	{
-		return RandomStringGenerator::s_Lowercase + RandomStringGenerator::s_Uppercase + RandomStringGenerator::s_Numerical;
+		return s_Lowercase + s_Uppercase + s_Numerical;
 	}
 	template<>
 	inline const std::string RandomStringGenerator::GetCharset<STRING_TYPE::ALPHA_SYMBOLS>()
 	{
-		return RandomStringGenerator::s_Lowercase + RandomStringGenerator::s_Uppercase + RandomStringGenerator::s_Symbols;
+		return s_Lowercase + s_Uppercase + s_Symbols;
 	}
 	template<>
 	inline const std::string RandomStringGenerator::GetCharset<STRING_TYPE::ALPHA_NUMERICAL_SYMBOLS>()
 	{
-		return RandomStringGenerator::s_Lowercase + RandomStringGenerator::s_Uppercase + RandomStringGenerator::s_Numerical + RandomStringGenerator::s_Symbols;
+		return s_Lowercase + s_Uppercase + s_Numerical + s_Symbols;
 	}
 #pragma endregion ALPHA
 #pragma endregion GET_CHARSET
