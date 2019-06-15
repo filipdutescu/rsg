@@ -1,5 +1,8 @@
 #include "rsg.h"
 
+// To remove
+#include <iostream>
+
 namespace rsg
 {
 	std::string RandomStringGenerator::s_Lowercase = "abcdefghijklmnopqrstuvwxyz";
@@ -36,6 +39,22 @@ namespace rsg
 	}
 	std::string RandomStringGenerator::operator()(int stringLength)
 	{
+		if (stringLength < 1) throw new std::exception("String length must be a non-zero positive integer.");
+
+		std::random_device rd;
+		std::mt19937 engine(rd());
+		std::uniform_int_distribution<> rng(0, stringLength);
+
+		std::string result = "";
+		for (int i = 0; i < stringLength; ++i)
+			result += m_Custom[rng(engine)];
+
+		return result;
+	}
+
+	std::string RandomStringGenerator::operator()(int stringLength, std::uniform_int_distribution<> rng)
+	{
+		if (stringLength < 1) throw new std::exception("String length must be a non-zero positive integer.");
 
 		return std::string();
 	}

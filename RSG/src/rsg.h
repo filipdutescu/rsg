@@ -2,6 +2,7 @@
 #define RANDOM_STRING_GENERATOR_H
 
 #include <string>
+#include <random>
 
 namespace rsg
 {
@@ -50,6 +51,8 @@ namespace rsg
 
 		// Generate a random string of a given length
 		std::string operator()(int stringLength);
+		// Generate a random string of a given length [, from a given distribution of numbers]
+		std::string operator()(int stringLength, std::uniform_int_distribution<> rng);
 
 		// Static method to get predefined charsets
 		template<STRING_TYPE T>
