@@ -20,7 +20,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\rsg.h">
+    <ClInclude Include="src\rsg.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -154,7 +154,7 @@
     <ClCompile Include="src\rsg.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\rsg.h" />
+    <ClInclude Include="src\rsg.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,4 +1,4 @@
-#include "rsg.h"
+#include "rsg.hpp"
 
 // To remove
 #include <iostream>
@@ -37,25 +37,32 @@ namespace rsg
 		default:                                        m_Custom = "";                                                      break;
 		}
 	}
+
 	std::string RandomStringGenerator::operator()(int stringLength)
 	{
 		if (stringLength < 1) throw new std::exception("String length must be a non-zero positive integer.");
 
 		std::random_device rd;
 		std::mt19937 engine(rd());
-		std::uniform_int_distribution<> rng(0, stringLength);
+		std::uniform_int_distribution<> rng(0, m_Custom.size() - 1);
 
-		std::string result = "";
+		std::string result;
 		for (int i = 0; i < stringLength; ++i)
 			result += m_Custom[rng(engine)];
 
 		return result;
 	}
 
-	std::string RandomStringGenerator::operator()(int stringLength, std::uniform_int_distribution<> rng)
+	/*std::string RandomStringGenerator::operator()(int stringLength, std::uniform_int_distribution<> rng, std::Generator engine)
 	{
-		if (stringLength < 1) throw new std::exception("String length must be a non-zero positive integer.");
+		if (stringLength < 1)   throw new std::exception("String length must be a non-zero positive integer.");
+		if (rng.max() < 1)      throw new std::exception("Uniform distribution upper limit must be at least 1.");
+		if (rng.min() < 0)      throw new std::exception("Uniform distribution upper limit must be at least 0.");
 
-		return std::string();
-	}
+		std::string result;
+		for (int i = 0; i < stringLength; ++i)
+			result += m_Custom[rng(engine)];
+
+		return result;
+	}*/
 }

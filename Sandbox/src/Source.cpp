@@ -1,17 +1,14 @@
 #include <iostream>
 #include <string>
-#include <map>
-#include <iomanip>
 
-#include "rsg.h"
+#include "rsg.hpp"
 
 
 int main()
 {
 	rsg::random_string rs;
-	std::cout << rsg::random_string::GetCharset<rsg::ALPHA_NUMERICAL_SYMBOLS>()
-		<< "\n\n" << rs.getCharset()
-		<< "\n\n" << rs(3);
+
+	std::cout << /*rs.getCharset() << "\n\n" <<*/ rs(1000000);
 
 	return 0;
 }

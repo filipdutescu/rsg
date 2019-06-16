@@ -1,2 +1,7 @@
 ﻿  rsg.cpp
+e:\workplace (personal)\c++\rsg\rsg\src\rsg.cpp(47): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
   rsg.vcxproj -> E:\Workplace (Personal)\C++\RSG\x64\Debug\rsg.lib
